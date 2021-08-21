@@ -49,7 +49,7 @@ mainCyclist.scale=0.07;
   
 
 //set collider for mainCyclist
-mainCyclist.setCollider("circle",0,0,850)
+mainCyclist.setCollider("circle",0,0,850);
 mainCyclist.debug=true;
   
 gameOver = createSprite(650,150,30,30);
@@ -65,9 +65,6 @@ redCG = new Group();
 
 function draw() {
   background(0);
-
-
-
   drawSprites();
   
   textSize(20);
@@ -133,15 +130,9 @@ function draw() {
      text("Press Up Arrow to Rstart the Game",300,220 );
    
 
-  
     path.velocityX = 0;
     mainCyclist.velocityY = 0
-
     
-    
-    
-
-   
     mainCyclist.addAnimation("SahilRunning",mainRacerImg2);
   
     pinkCG.setVelocityXEach(0);
@@ -154,11 +145,11 @@ function draw() {
     redCG.setLifetimeEach(-1);
 
     
-    if(keyDown("up")){
+    if (keyDown("up")) {
     //write condition for calling reset( )
     reset();
-    
-    } 
+    }
+      
     }
 
     
@@ -193,17 +184,12 @@ function redCyclists(){
 }
 
 //create reset function hear 
-
-function reset(){
-gameState=PLAY
-gameOver.visible=false
-mainRacer.addAnimation("SahilRunning",mainRacerImg2)
-pinkCG.destroyEach();
-yellowCG.destroyEach();
-redCG.destroyEach();
-distance = 0;
-
-
-}
-
-
+  function reset(){
+    gameState=PLAY;
+    gameOver.visible=false;
+    mainCyclist.addAnimation("SahilRunning",mainRacerImg1);
+    pinkCG.destroyEach();
+    yellowCG.destroyEach();
+    redCG.destroyEach();
+    distance = 0;
+    }
